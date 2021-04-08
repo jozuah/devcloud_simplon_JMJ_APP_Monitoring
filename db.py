@@ -15,27 +15,28 @@ class DB:
         )
         self.query_specify = None
 
-    def select_from_db(self, query=None):
-        if query != None:
-            print(f'select element by group name : {query}')
-            self.query_specify = f"select SubscriptionName as 'Group Name', SUM(Cost) as 'Cout total' FROM period1 WHERE SubscriptionName = '{query}';"
-            try:
-                self.mycursor = self.myconn.cursor(dictionary=True)
-                self.mycursor.execute(self.query_specify)
-                result = self.mycursor.fetchall()
-            except:
-                print('error for get one element')
-                exit()
-        else:
-            try:
-                print('select all elements')
-                self.query_specify += 'SELECT * FROM period1;'
-                self.mycursor = self.myconn.cursor(dictionary=True)
-                self.mycursor.execute(self.query_specify)
-                result = self.mycursor.fetchall()
-            except:
-                print('error for get all elements in page welcome')
-                exit()
+    def select_from_db(self, query):
+        print(f'select element by group name : {query}')
+        self.query_specify = f"select SubscriptionName as 'Group Name', SUM(Cost) as 'Cout total' FROM period1 WHERE SubscriptionName = '{query}';"
+        try:
+            self.mycursor = self.myconn.cursor(dictionary=True)
+            self.mycursor.execute(self.query_specify)
+            result = self.mycursor.fetchall()
+        except:
+            print('error for get one element')
+            exit()
+        return result
+
+    def select_all(self):
+        try:
+            print('select all elements')
+            self.query_specify = 'select * FROM period1;'
+            self.mycursor = self.myconn.cursor(dictionary=True)
+            self.mycursor.execute(self.query_specify)
+            result = self.mycursor.fetchall()
+        except:
+            print('error for get all elements in page welcome')
+            exit()
         return result
 
     def __disconnect__(self):

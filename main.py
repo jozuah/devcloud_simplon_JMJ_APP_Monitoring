@@ -1,18 +1,33 @@
-from flask import Flask, request, render_template, jsonify, redirect
+from flask import Flask, request, render_template, jsonify, redirect, url_for
 from db import *
-from urllib import parse
 import json
+import time
+import urllib.parse
 
 app = Flask(__name__)
 
 
-@app.route('/api/', defaults={'groups': None})
-@app.route("/api/<groups>")
-def get_data_list(groups):
+@app.route("/api")
+def get_data_list():
+    groups = request.args.get('groups') if request.args.get(
+        'groups') else None
+    if groups == None:
+        return redirect(url_for('data_not_found'))
+    else:
+        try:
+            db = DB()
+            groups = urllib.parse.unquote_plus(groups)
+            data = db.select_from_db(groups)
+        except:
+            return 'error'
+    return jsonify(data)
+
+
+@app.route("/all_data")
+def get_all_data():
     try:
         db = DB()
-        groups = parse.unquote_plus(groups)
-        data = db.select_from_db(groups)
+        data = db.select_all()
         return jsonify(data)
     except:
         return 'error'
@@ -20,4 +35,9 @@ def get_data_list(groups):
 
 @app.route("/")
 def home():
-    return 'ok'
+    return 'bienvenue sur le back-end'
+
+
+@app.errorhandler(404)
+def data_not_found(e):
+    return 'data not found'
