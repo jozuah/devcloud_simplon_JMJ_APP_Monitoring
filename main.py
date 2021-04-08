@@ -6,7 +6,7 @@ app = Flask(__name__)
 
 
 @app.route("/api")
-def get_pokemon_list():
+def get_data_list():
     try:
         db = DB()
         data = db.select_from_db()
