@@ -1,0 +1,22 @@
+{
+  "name": "jmj_monitoring_app",
+  "version": "1.0.0",
+  "description": "this our version of the azure monitoring app ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jozuah/devcloud_simplon_JMJ_APP_Monitoring.git"
+  },
+  "author": "JMJ Project",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jozuah/devcloud_simplon_JMJ_APP_Monitoring/issues"
+  },
+  "homepage": "https://github.com/jozuah/devcloud_simplon_JMJ_APP_Monitoring#readme",
+  "dependencies": {
+    "node": "^15.12.0"
+  }
+}
