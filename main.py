@@ -1,16 +1,18 @@
 from flask import Flask, request, render_template, jsonify, redirect
 from db import *
+from urllib import parse
 import json
 
 app = Flask(__name__)
 
 
-@app.route("/api")
-def get_data_list():
+@app.route('/api/', defaults={'groups': None})
+@app.route("/api/<groups>")
+def get_data_list(groups):
     try:
         db = DB()
-        data = db.select_from_db()
-        db.__disconnect__()
+        groups = parse.unquote_plus(groups)
+        data = db.select_from_db(groups)
         return jsonify(data)
     except:
         return 'error'
