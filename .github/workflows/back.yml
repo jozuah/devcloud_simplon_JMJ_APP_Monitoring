@@ -6,7 +6,7 @@ name: Build,test and deploy Python app to Azure Web App - back_JMJ
 on:
     push:
         branches:
-            - back
+            - mouny
     workflow_dispatch:
 
 jobs:
