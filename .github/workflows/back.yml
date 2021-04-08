@@ -17,18 +17,20 @@ jobs:
             - name: Test hello world
               run: echo 'hello world'
 
+    secondJob:
+        runs-on: Ubuntu-20.04
         steps:
-            - uses: actions/checkout@mouny
+            - uses: actions/checkout@v2
             - name: Set up Python version
               uses: actions/setup-python@v1
               with:
-                python-version: '3.8'
+                  python-version: "3.8"
 
             - name: Install dependencies
               run: |
-                python -m pip install --upgrade pip
-                pip install Flask
-                pip install python-dotenv
+                  python -m pip install --upgrade pip
+                  pip install Flask
+                  pip install python-dotenv
 
             - name: Test bye
               run: echo 'bye'
