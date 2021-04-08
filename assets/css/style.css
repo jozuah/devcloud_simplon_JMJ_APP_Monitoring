@@ -1,0 +1,22 @@
+body{
+    margin: 0px;
+}
+.content{
+    display: flex;
+    background-color: lightgray;
+}
+.site-title{
+    display: flex;
+    align-items: center;
+}
+.logo{
+    width: 10rem;
+    border-radius: 5rem;
+}
+.title{
+    text-align: center;
+}
+footer{
+    display: flex;
+    justify-content: center;
+}

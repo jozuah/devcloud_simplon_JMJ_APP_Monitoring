@@ -2,9 +2,10 @@
   "name": "jmj_monitoring_app",
   "version": "1.0.0",
   "description": "this our version of the azure monitoring app ",
-  "main": "index.js",
+  "main": "./src/index.html",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "server": "lite-server",
+    "start": "npm run server"
   },
   "repository": {
     "type": "git",
@@ -18,5 +19,9 @@
   "homepage": "https://github.com/jozuah/devcloud_simplon_JMJ_APP_Monitoring#readme",
   "dependencies": {
     "node": "^15.12.0"
+  },
+  "devDependencies": {
+    "axios": "^0.21.1",
+    "lite-server": "^2.6.1"
   }
 }
