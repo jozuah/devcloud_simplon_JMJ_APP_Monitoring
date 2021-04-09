@@ -17,24 +17,19 @@ class DB:
 
     def select_from_db(self, query=None):
         if query != None:
+            print('select element by params')
             self.query_specify = query
-            try:
-                self.mycursor = self.myconn.cursor(dictionary=True)
-                self.mycursor.execute(self.query_specify)
-                result = self.mycursor.fetchall()
-            except:
-                print('error for get one element')
-                exit()
         else:
-            try:
-                print('select all elements')
-                self.query_specify = 'select * FROM period1;'
-                self.mycursor = self.myconn.cursor(dictionary=True)
-                self.mycursor.execute(self.query_specify)
-                result = self.mycursor.fetchall()
-            except:
-                print('error for get all elements in page welcome')
-                exit()
+            print('select all elements')
+            self.query_specify = 'select * FROM period1;'
+
+        try:
+            self.mycursor = self.myconn.cursor(dictionary=True)
+            self.mycursor.execute(self.query_specify)
+            result = self.mycursor.fetchall()
+        except:
+            print('error for get all elements in page welcome')
+            exit()
         return result
 
     def __disconnect__(self):

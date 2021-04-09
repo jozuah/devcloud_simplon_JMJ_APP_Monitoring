@@ -1,4 +1,4 @@
-from flask import request, jsonify, abort
+from flask import request, abort
 
 
 def get_param_convert():
