@@ -2,6 +2,7 @@ import mysql.connector
 import pandas as pd
 import os
 from dotenv import load_dotenv
+import datetime
 
 load_dotenv()
 #sudo apt-get install python3-pandas
@@ -22,6 +23,7 @@ class setDataPricing():
         ServiceResource_list=[]
         Quantity_list=[]
         Cost_list=[]
+        time_list=[]
 
         for i in range(len(mydata.index)):
             SubscriptionName_list.append(mydata['SubscriptionName'].values[i])
@@ -30,8 +32,9 @@ class setDataPricing():
             ServiceResource_list.append(mydata['ServiceResource'].values[i])
             Quantity_list.append(float(mydata['Quantity'].values[i].replace(',','.')))
             Cost_list.append(float(mydata['Cost'].values[i].replace(',','.')))
+            time_list.append(datetime.date.today())
 
-        All_data = list(set(zip(SubscriptionName_list, Date_list, ServiceName_list, ServiceResource_list,Quantity_list,Cost_list)))
+        All_data = list(set(zip(SubscriptionName_list, Date_list, ServiceName_list, ServiceResource_list,Quantity_list,Cost_list,time_list)))
         return All_data
 
     def connection_db(self):
@@ -53,7 +56,7 @@ class setDataPricing():
     def insertIntoTable(self) :
         
         cursor = self.conn.cursor()
-        insert = "INSERT INTO period1 (SubscriptionName, Date, ServiceName, ServiceResource, Quantity, Cost) VALUES (%s, %s, %s, %s, %s, %s);"
+        insert = "INSERT INTO period1 (SubscriptionName, Date, ServiceName, ServiceResource, Quantity, Cost, PublicationDate) VALUES (%s, %s, %s, %s, %s, %s, %s);"
         value = self.data_list
         cursor.executemany(insert, value)
         self.conn.commit()
@@ -64,7 +67,7 @@ class setDataPricing():
 #All usable methods
 dataset = setDataPricing()
 dataset.insertIntoTable()
-dataset.getValuesFromMysql()
+#dataset.getValuesFromMysql()
 
 #Afficher toute les ligne, pas seulement les 10 premières
 #pd.set_option('display.max_rows', None)
