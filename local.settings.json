@@ -1,8 +1,0 @@
-{
-  "IsEncrypted": false,
-  "Values": {
-    "AzureWebJobsStorage": "",
-    "FUNCTIONS_WORKER_RUNTIME": "python",
-    "jmjappmonitoringstorage_STORAGE": "DefaultEndpointsProtocol=https;AccountName=jmjappmonitoringstorage;AccountKey=u5SnZpP4l8iFlZMwlYDH15dQQMBJ1zfc1cCvaiIh+FJBPwz9orqILT0Jl1F0SR1Jw239y3D9spoABGdviO85aQ==;EndpointSuffix=core.windows.net"
-  }
-}
