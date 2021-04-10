@@ -27,6 +27,7 @@ class DB:
             self.mycursor = self.myconn.cursor(dictionary=True)
             self.mycursor.execute(self.query_specify)
             result = self.mycursor.fetchall()
+            self.__disconnect__()
         except:
             print('error for get all elements in page welcome')
             exit()
