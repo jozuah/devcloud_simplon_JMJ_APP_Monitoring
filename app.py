@@ -7,7 +7,6 @@ app = Flask(__name__)
 
 
 @app.route("/api/")
-@app.route("/api")
 def get_data_list():
     data_filter = get_param_convert()
     try:
