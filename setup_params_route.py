@@ -25,5 +25,5 @@ def create_query_filter(dict_query_filter):
         part_1_query += f'{value}, '
         part_2_query += f"{value} = '{dict_query_filter[value]}' " if (key == (
             len(dict_query_filter)-1)) else f"{value} = '{dict_query_filter[value]}' AND "
-    query_filter = f'{part_1_query}{part_2_query} GROUP BY SubscriptionName, PublicationDate'
+    query_filter = f'{part_1_query}{part_2_query} GROUP BY SubscriptionName, PublicationDate;'
     return query_filter
