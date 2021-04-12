@@ -1,9 +1,11 @@
 from flask import Flask, jsonify, abort
+from flask_cors import CORS
 from setup_params_route import get_param_convert
 from db import *
 import json
 
 app = Flask(__name__)
+CORS(app)
 
 
 @app.route("/api/")
