@@ -35,7 +35,7 @@ Joshua G. : https://github.com/jozuah
 
 # Logic App 
 
-Fonctionnement : Une fois par semaine, la'application va regarder sur une adresse mail spécifique si un nouveau document du type file.xlx a été mis en pièce jointe d'un mail. Si il y a un nouveau dcoument, il est transféré dans un container de stockage sur Azure Storage.
+Fonctionnement : Une fois par semaine, l'application va regarder sur une adresse mail spécifique si un nouveau document du type file.xlx a été mis en pièce jointe d'un mail. Si il y a un nouveau dcoument, il est transféré dans un container de stockage sur Azure Storage.
 
 # Azure Function - trigger stockage blob azure
 
