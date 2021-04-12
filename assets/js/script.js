@@ -21,13 +21,13 @@ function appendData(data) {
     var mainContainer = document.getElementById("myData");
     if (data.length === 0) {
         console.log
-        var div = document.createElement("div");
+        var div = document.createElement("div.costs");
         div.innerHTML ='No cost has been found';
         mainContainer.appendChild(div);
     }
     else {
         for (var i = 0; i < data.length; i++) {
-            var div = document.createElement("div");
+            var div = document.createElement("div.costs");
             div.innerHTML ='\rCout total: '+  data[i].CoutTotal + ' Publication Date: '+ data[i].PublicationDate ;
             mainContainer.appendChild(div);
         }

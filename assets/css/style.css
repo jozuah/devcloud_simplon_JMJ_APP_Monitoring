@@ -15,12 +15,17 @@ body{
     align-items: center;
 }
 .logo{
-    width: 10rem;
-    border-radius: 5rem;
+    width: 5rem;
 }
 .search-bar{
     display: flex;
     align-items: center;
+    margin-right: 2px;
+}
+.home-button{
+    margin-left: 5px;
+    margin-right: 5px;
+    border-radius: 1rem;
 }
 .title{
     text-align: center;
@@ -86,3 +91,16 @@ footer{
     display: flex;
     justify-content: center;
 }
+#myData{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+select{
+    margin-left: 5px;
+}
+#search_box3{
+    margin-left: 5px;
+}
+/* div\.costs{
+} */
