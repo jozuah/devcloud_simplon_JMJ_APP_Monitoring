@@ -12,8 +12,7 @@ def get_all_data_for_all_time():
         return "Select ROUND(SUM(Cost),2) as 'CoutTotal' From period1;"
     elif request.args.get('cost') == 'AllTimeBySubscriptionName':
         return "Select SubscriptionName, ROUND(SUM(Cost),2) as 'CoutTotal' From period1 GROUP BY SubscriptionName;"
-    elif len(request.args) > 1:
-        return abort(404)
+    return abort(404)
 
 
 def get_data_by_params():
