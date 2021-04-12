@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <title>JMJ monitoring azure app</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.1.0/chart.min.js" integrity="sha512-RGbSeD/jDcZBWNsI1VCvdjcDULuSfWTtIva2ek5FtteXeSjLfXac4kqkDRHVGf1TwsXCAqPTF7/EYITD0/CTqw==" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="/assets/css/style.css">
 </head>
 
@@ -14,95 +15,158 @@
     <header>
         <div class="header-container">
             <div class="content">
-                <img class="logo"
-                    src="assets/img/kisspng-computer-icons-monitoring-near-miss-day-5b4eb339c45729.3249542115318843458042.png"
-                    alt="" srcset="">
-                <h3 class="site-title">JMJ Monitoring </h3>
+                <a href="index.html">
+                    <img
+                        class="logo"
+                        src="assets/img/kisspng-computer-icons-monitoring-near-miss-day-5b4eb339c45729.3249542115318843458042.png"
+                        alt=""
+                        srcset=""
+                    />
+                </a>
+                <h3 class="site-title">JMJ Monitoring</h3>
             </div>
             <div class="search-bar">
                 <form action="/action_page.php">
-                    <input type="text" placeholder="Search.." name="search">
-                    <button type="submit"><i class="fa fa-search"></i></button>
+                    <input
+                        type="text"
+                        placeholder="Search.."
+                        name="search"
+                    />
+                    <button type="submit">
+                        <i class="fa fa-search"></i>
+                    </button>
                 </form>
-                <a href="index.html"><button class="home-button"><i class="fas fa-home"></i></button></a>
+                <a href="index.html"
+                    ><button class="home-button">
+                        <i class="fas fa-home"></i></button
+                ></a>
             </div>
         </div>
     </header>
-    <div class="body-container">
-        <h1 class="title"> Monitoring</h1>
-    </div>
-    <div class="box">
-        <div class="inputs-fields">
-            <select id="subscriptionname">
-                <option value="">All Promotion</option>
-                <option value="Nantes">Nantes</option>
-                <option value="Simplon%20GDE%20Strasbourg%20IA1">Simplon GDE Strasbourg IA1</option>
-                <option value="DP100%20Sponsorship" selected>DP100 Sponsorship</option>
-                <option value="Simplon%20GDO%20Rennes%20IA1">Simplon GDO Rennes IA1</option>
-                <option value="Simplon%20IDF%20Aulnay%20Cloud1">Simplon IDF Aulnay Cloud1</option>
-                <option value="Simplon%20GDO%20Nantes%20IA1">Simplon GDO Nantes IA1</option>
-                <option value="Simplon%20Rennes">Simplon Rennes</option>
-                <option value="Simplon%20Nouvelle-Aquitaine%20IA-1">Simplon Nouvelle-Aquitaine IA-1</option>
-                <option value="Simplon%20OCC%20Castelnau%20Cloud1">Simplon OCC Castelnau Cloud1</option>
-                <option value="Simplon%20PACA%20Marseille%20IA1">Simplon PACA Marseille IA1</option>
-                <option value="Simplon%20NAQ%20Bordeaux%20IA1">Simplon NAQ Bordeaux IA1</option>
-                <option value="Simplon%20GDE%20Nancy%20IA1">Simplon GDE Nancy IA1</option>
-            </select>
-            <select id="servicename">
-                <option value="">All Ressources</option>
-                <option value="Storage">Storage</option>
-                <option value="Virtual%20Machines">Virtual Machines</option>
-                <option value="Azure%20App%20Service">Azure App Service</option>
-                <option value="Azure%20Cognitive%20Search">Azure Cognitive Search</option>
-                <option value="Azure%20Database%20for%20MySQL">Azure Database for MySQL</option>
-                <option value="Azure%20Database%20for%20PostgreSQL">Azure Database for PostgreSQL</option>
-                <option value="Azure%20DNS">Azure DNS</option>
-                <option value="Bandwidth">Bandwidth</option>
-                <option value="Cognitive%20Services">Cognitive Services</option>
-                <option value="Container%20Instances">Container Instances</option>
-                <option value="Container%20Registry">Container Registry</option>
-                <option value="Functions">Functions</option>
-                <option value="Key%20Vault">Key Vault</option>
-                <option value="Load%20Balancer">Load Balancer</option>
-                <option value="Log%20Analytics">Log Analytics</option>
-                <option value="Logic%20Apps">Logic Apps</option>
-                <option value="Network%20Watcher">Network Watcher</option>
-                <option value="SQL%20Database">SQL Database</option>
-                <option value="Virtual%20Network">Virtual Network</option>
-            </select>
-            <select id="period">
-                <option value="">By period</option>
-                <option value="">All Time</option>
-            </select>
-            <button id="search_box3"> search </button>
+    <main>
+        <div class="body-container">
+            <h1 class="title">Monitoring</h1>
         </div>
-        <div id="myData"></div>
-    </div>
-    <div class="pre-footer">
-        <div class="credit">
-            <h5>Legal Information</h5>
-            <a href="#">Privacy Politic</a>
-            <a href="#">pricing</a>
-            <a href="#">Cookie</a>
-            <a href="#"></a>
+        <div class="box">
+            <div class="inputs-fields">
+                <select id="subscriptionname">
+                    <option value="">All Promotion</option>
+                    <option value="Nantes">Nantes</option>
+                    <option value="Simplon%20GDE%20Strasbourg%20IA1">
+                        Simplon GDE Strasbourg IA1
+                    </option>
+                    <option value="DP100%20Sponsorship" selected>
+                        DP100 Sponsorship
+                    </option>
+                    <option value="Simplon%20GDO%20Rennes%20IA1">
+                        Simplon GDO Rennes IA1
+                    </option>
+                    <option value="Simplon%20IDF%20Aulnay%20Cloud1">
+                        Simplon IDF Aulnay Cloud1
+                    </option>
+                    <option value="Simplon%20GDO%20Nantes%20IA1">
+                        Simplon GDO Nantes IA1
+                    </option>
+                    <option value="Simplon%20Rennes">Simplon Rennes</option>
+                    <option value="Simplon%20Nouvelle-Aquitaine%20IA-1">
+                        Simplon Nouvelle-Aquitaine IA-1
+                    </option>
+                    <option value="Simplon%20OCC%20Castelnau%20Cloud1">
+                        Simplon OCC Castelnau Cloud1
+                    </option>
+                    <option value="Simplon%20PACA%20Marseille%20IA1">
+                        Simplon PACA Marseille IA1
+                    </option>
+                    <option value="Simplon%20NAQ%20Bordeaux%20IA1">
+                        Simplon NAQ Bordeaux IA1
+                    </option>
+                    <option value="Simplon%20GDE%20Nancy%20IA1">
+                        Simplon GDE Nancy IA1
+                    </option>
+                </select>
+                <select id="servicename">
+                    <option value="">All Ressources</option>
+                    <option value="Storage">Storage</option>
+                    <option value="Virtual%20Machines">
+                        Virtual Machines
+                    </option>
+                    <option value="Azure%20App%20Service">
+                        Azure App Service
+                    </option>
+                    <option value="Azure%20Cognitive%20Search">
+                        Azure Cognitive Search
+                    </option>
+                    <option value="Azure%20Database%20for%20MySQL">
+                        Azure Database for MySQL
+                    </option>
+                    <option value="Azure%20Database%20for%20PostgreSQL">
+                        Azure Database for PostgreSQL
+                    </option>
+                    <option value="Azure%20DNS">Azure DNS</option>
+                    <option value="Bandwidth">Bandwidth</option>
+                    <option value="Cognitive%20Services">
+                        Cognitive Services
+                    </option>
+                    <option value="Container%20Instances">
+                        Container Instances
+                    </option>
+                    <option value="Container%20Registry">
+                        Container Registry
+                    </option>
+                    <option value="Functions">Functions</option>
+                    <option value="Key%20Vault">Key Vault</option>
+                    <option value="Load%20Balancer">Load Balancer</option>
+                    <option value="Log%20Analytics">Log Analytics</option>
+                    <option value="Logic%20Apps">Logic Apps</option>
+                    <option value="Network%20Watcher">
+                        Network Watcher
+                    </option>
+                    <option value="SQL%20Database">SQL Database</option>
+                    <option value="Virtual%20Network">
+                        Virtual Network
+                    </option>
+                </select>
+                <select id="period">
+                    <option value="">By period</option>
+                    <option value="">All Time</option>
+                </select>
+                <button id="search_box3">search</button>
+            </div>
+            <div id="myData"></div>
+            <div id="myChart">
+                <canvas id="barChart"></canvas>
+            </div>
         </div>
-        <div class="credit">
-            <h5>Our information</h5>
-            <a href="#">About Us</a>
-            <a href="#">Find us</a>
-            <a href="#">Contact</a>
-        </div>
-        <div class="credit">
-            <h5>Follow Us</h5>
-            <a href="#">FaceBook <i class="fab fa-facebook"></i></a>
-            <a href="#">Twitter <i class="fab fa-twitter"></i></a>
-        </div>
-    </div>
+    </main>
     <footer>
+        <div class="pre-footer">
+            <div class="credit">
+                <h5>Legal Information</h5>
+                <a href="#">Privacy Politic</a>
+                <a href="#">pricing</a>
+                <a href="#">Cookie</a>
+                <a href="#"></a>
+            </div>
+            <div class="credit">
+                <h5>Our information</h5>
+                <a href="#">About Us</a>
+                <a href="#">Find us</a>
+                <a href="#">Contact</a>
+            </div>
+            <div class="credit">
+                <h5>Follow Us</h5>
+                <a href="#">FaceBook <i class="fab fa-facebook"></i></a>
+                <a href="#">Twitter <i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
         Designed & Powered By JMJ Project© 2021
     </footer>
     <script src="assets/js/script.js"></script>
-    <script src="https://kit.fontawesome.com/d54a7ee144.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
+    <script src="assets/js/setup.js"></script>
+    <script
+        src="https://kit.fontawesome.com/d54a7ee144.js"
+        crossorigin="anonymous"
+    ></script>
 </body>
-
 </html>

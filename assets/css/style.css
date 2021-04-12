@@ -1,27 +1,56 @@
-body{
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;1,300&display=swap");
+
+body {
     margin: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+    min-height: 900px;
+    font-family: "Roboto";
 }
+
+header {
+    background-color: lightgray;
+    display: flex;
+    justify-content: center;
+    padding: 20px 0px;
+}
+
 .header-container{
     display: flex;
     justify-content: space-between;
-    background-color: lightgray;
+    min-width: 900px;
 }
+
 .content{
     display: flex;
     background-color: lightgray;
 }
+
+main {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .site-title{
     display: flex;
     align-items: center;
+    margin-left: 15px;
 }
+
 .logo{
     width: 5rem;
 }
+
 .search-bar{
     display: flex;
     align-items: center;
     margin-right: 2px;
 }
+
 .home-button{
     margin-left: 5px;
     margin-right: 5px;
@@ -45,6 +74,7 @@ body{
     width: 20rem;
     padding: 1rem;
 }
+
 .article-image{
     width: 20rem;
     box-shadow: black;
@@ -54,10 +84,12 @@ body{
     display: flex;
     justify-content: center;
 }
+
 a{
     text-decoration: none;
     color: white;
 }
+
 .button-style{
     width: 25%;
     margin: 2rem;
@@ -70,31 +102,51 @@ a{
 .button-style:hover{
     background-color: black;
 }
+
 .pre-footer{
     display: flex;
     justify-content: space-between;
     background-color: lightgray;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
 }
+
 .credit{
     display: flex;
+    align-items: center;
     flex-direction: column;
     width: 25%;
     color: black;
 }
+
 footer{
     display: flex;
+    flex-direction: column;
     justify-content: center;
     background-color: black;
     color: white;
+    text-align: center;
+    padding-bottom: 20px;
 }
+
 .inputs-fields{
     display: flex;
     justify-content: center;
 }
+
 #myData{
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+#myChart {
+    width: 500px;
+    margin: auto;
+}
+
+#myChart > canvas {
+    width: 100%;
 }
 select{
     margin-left: 5px;
@@ -102,5 +154,3 @@ select{
 #search_box3{
     margin-left: 5px;
 }
-/* div\.costs{
-} */
