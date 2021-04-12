@@ -5,6 +5,12 @@ def get_param_convert():
     group_filter = ['SubscriptionName', 'Date',
                     'ServiceName', 'ServiceResource', 'PublicationDate']
     data_filter = {}
+
+    if 'cost' in request.args and request.args.get('cost') == 'AllTime':
+        return "Select ROUND(SUM(Cost),2) as 'CoutTotalForAll' From period1;"
+    elif request.args.get('cost') == 'AllTimeBySubscriptionName':
+        return "Select SubscriptionName, ROUND(SUM(Cost),2) as 'CoutTotalForAll' From period1 GROUP BY SubscriptionName;"
+
     for i in group_filter:
         if i in request.args:
             value = request.args.get(i)
