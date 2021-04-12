@@ -2,14 +2,24 @@ from flask import request, abort
 
 
 def get_param_convert():
-    group_filter = ['SubscriptionName', 'Date',
-                    'ServiceName', 'ServiceResource', 'PublicationDate']
-    data_filter = {}
+    if ('cost' in request.args) and (len(request.args) == 1):
+        return get_all_data_for_all_time()
+    return get_data_by_params()
 
-    if 'cost' in request.args and request.args.get('cost') == 'AllTime':
+
+def get_all_data_for_all_time():
+    if request.args.get('cost') == 'AllTime':
         return "Select ROUND(SUM(Cost),2) as 'CoutTotal' From period1;"
     elif request.args.get('cost') == 'AllTimeBySubscriptionName':
         return "Select SubscriptionName, ROUND(SUM(Cost),2) as 'CoutTotal' From period1 GROUP BY SubscriptionName;"
+    elif len(request.args) > 1:
+        return abort(404)
+
+
+def get_data_by_params():
+    group_filter = ['SubscriptionName', 'Date',
+                    'ServiceName', 'ServiceResource', 'PublicationDate']
+    data_filter = {}
 
     for i in group_filter:
         if i in request.args:
