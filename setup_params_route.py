@@ -3,7 +3,7 @@ from flask import request, abort
 
 def get_param_convert():
     group_filter = ['SubscriptionName', 'Date',
-                    'ServiceName', 'ServiceResource']
+                    'ServiceName', 'ServiceResource', 'PublicationDate']
     data_filter = {}
     for i in group_filter:
         if i in request.args:
