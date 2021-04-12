@@ -27,12 +27,11 @@ class DB:
             self.mycursor = self.myconn.cursor(dictionary=True)
             self.mycursor.execute(self.query_specify)
             result = self.mycursor.fetchall()
+            print('disconnect from database')
+            self.myconn.commit()
+            self.myconn.close()
+
         except:
             print('error for get all elements in page welcome')
             exit()
         return result
-
-    def __disconnect__(self):
-        print('disconnect from database')
-        self.myconn.commit()
-        self.myconn.close()

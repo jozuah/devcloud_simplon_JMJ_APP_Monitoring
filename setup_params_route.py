@@ -3,7 +3,7 @@ from flask import request, abort
 
 def get_param_convert():
     group_filter = ['SubscriptionName', 'Date',
-                    'ServiceName', 'ServiceResource']
+                    'ServiceName', 'ServiceResource', 'PublicationDate']
     data_filter = {}
     for i in group_filter:
         if i in request.args:
@@ -20,7 +20,7 @@ def get_param_convert():
 
 def create_query_filter(dict_query_filter):
     part_1_query = 'Select '
-    part_2_query = "SUM(Cost) as 'Cout total' From period1 WHERE "
+    part_2_query = "ROUND(SUM(Cost),2) as 'Cout total' From period1 WHERE "
     for key, value in enumerate(dict_query_filter):
         part_1_query += f'{value}, '
         part_2_query += f"{value} = '{dict_query_filter[value]}';" if (key == (
