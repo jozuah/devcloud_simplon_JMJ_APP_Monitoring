@@ -1,6 +1,11 @@
 body{
     margin: 0px;
 }
+.header-container{
+    display: flex;
+    justify-content: space-between;
+    background-color: lightgray;
+}
 .content{
     display: flex;
     background-color: lightgray;
@@ -13,10 +18,71 @@ body{
     width: 10rem;
     border-radius: 5rem;
 }
+.search-bar{
+    display: flex;
+    align-items: center;
+}
 .title{
     text-align: center;
 }
+
+.article{
+    display: flex;
+    justify-content: center;
+}
+
+.article-container{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid;
+    margin: 1.5rem;
+    border-radius: 1rem;
+    width: 20rem;
+    padding: 1rem;
+}
+.article-image{
+    width: 20rem;
+    box-shadow: black;
+}
+
+.next-page-button{
+    display: flex;
+    justify-content: center;
+}
+a{
+    text-decoration: none;
+    color: white;
+}
+.button-style{
+    width: 25%;
+    margin: 2rem;
+    padding: 0.5rem;
+    border-radius: 1rem;
+    background-color: lightgray;
+    color: white;
+}
+
+.button-style:hover{
+    background-color: black;
+}
+.pre-footer{
+    display: flex;
+    justify-content: space-between;
+    background-color: lightgray;
+}
+.credit{
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    color: black;
+}
 footer{
+    display: flex;
+    justify-content: center;
+    background-color: black;
+    color: white;
+}
+.inputs-fields{
     display: flex;
     justify-content: center;
 }
