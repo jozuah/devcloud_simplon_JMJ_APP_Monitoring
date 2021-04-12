@@ -2,18 +2,17 @@ from flask import request, abort
 
 
 def get_param_convert():
-    if ('cost' in request.args) and (len(request.args) == 1):
+    if 'cost' in request.args:
         return get_all_data_for_all_time()
     return get_data_by_params()
 
 
 def get_all_data_for_all_time():
-    if request.args.get('cost') == 'AllTime':
+    if (request.args.get('cost') == 'AllTime' and len(request.args) == 1):
         return "Select ROUND(SUM(Cost),2) as 'CoutTotal' From period1;"
-    elif request.args.get('cost') == 'AllTimeBySubscriptionName':
+    elif (request.args.get('cost') == 'AllTimeBySubscriptionName' and len(request.args) == 1):
         return "Select SubscriptionName, ROUND(SUM(Cost),2) as 'CoutTotal' From period1 GROUP BY SubscriptionName;"
-    elif len(request.args) > 1:
-        return abort(404)
+    return abort(404)
 
 
 def get_data_by_params():
