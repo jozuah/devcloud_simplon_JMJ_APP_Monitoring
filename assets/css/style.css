@@ -86,14 +86,16 @@ main {
 }
 
 a{
+    color: white;
+    text-decoration: none;
+}
+.try-button{
     justify-content: center;
     display: flex;
     width: 50%;
     margin: 2rem;
     padding: 0.5rem;
     border-radius: 1rem;
-    color: white;
-    text-decoration: none;
 }
 
 .button-style{
@@ -114,7 +116,6 @@ a{
     justify-content: space-between;
     background-color: lightgray;
     padding-bottom: 20px;
-    margin-bottom: 20px;
 }
 
 .credit{
