@@ -86,8 +86,14 @@ main {
 }
 
 a{
-    text-decoration: none;
+    justify-content: center;
+    display: flex;
+    width: 50%;
+    margin: 2rem;
+    padding: 0.5rem;
+    border-radius: 1rem;
     color: white;
+    text-decoration: none;
 }
 
 .button-style{
