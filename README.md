@@ -62,6 +62,9 @@ https://jmjappmonitoring-back.azurewebsites.net/api/?SubscriptionName=Nantes&Ser
 Fonction : Partie visible par l'utilisateur, il sélectionne les données qu'il veut voir par l'intermédiaire de menu déroulant.
 Accessibilité : https://jmjappmonitoringstorage.z28.web.core.windows.net/
 
+![enter image description here](https://github.com/jozuah/devcloud_simplon_JMJ_APP_Monitoring/blob/master/images_readme/frontfirst.png)
+![enter image description here](https://github.com/jozuah/devcloud_simplon_JMJ_APP_Monitoring/blob/master/images_readme/frontchart.png)
+![enter image description here](https://github.com/jozuah/devcloud_simplon_JMJ_APP_Monitoring/blob/master/images_readme/frontdropdown.png)
 
 ## Dépot git
 
