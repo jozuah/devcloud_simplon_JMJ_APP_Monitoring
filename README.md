@@ -9,7 +9,9 @@ A partir d'un document excel fournit par MS Azure sur notre adresse email, le do
 
 ## Equipe de developpement
 Jordan T. : https://github.com/Jordan-Fakers
+
 Mouny K. : https://github.com/keomouny
+
 Joshua G. : https://github.com/jozuah
 
 ## Technologies utilisées
@@ -33,15 +35,19 @@ Joshua G. : https://github.com/jozuah
 |  Azure Web App  |    Back-end  | Python |
 |  Azure Storage  |    Front-end / Stockage de fichiers  | Html/CSS/ Javascript |
 
-# Logic App 
+## Logic App 
 
-Fonctionnement : Une fois par semaine, la'application va regarder sur une adresse mail spécifique si un nouveau document du type file.xlx a été mis en pièce jointe d'un mail. Si il y a un nouveau dcoument, il est transféré dans un container de stockage sur Azure Storage.
+Fonctionnement : Une fois par semaine, l'application va regarder sur une adresse mail spécifique si un nouveau document du type file.xlx a été mis en pièce jointe d'un mail. Si il y a un nouveau dcoument, il est transféré dans un container de stockage sur Azure Storage.
+
+![enter image description here](https://github.com/jozuah/devcloud_simplon_JMJ_APP_Monitoring/blob/master/images_readme/logicapp.png)
 
 # Azure Function - trigger stockage blob azure
 
 Fonctionnement : Dès qu'un document est ajouté au container "costsfiles" dans Azure Storage, il est immédiatement analysé et les données sont envoyés sur une base de donnée Azure MySQL
 
-# Back-end 
+![enter image description here](https://github.com/jozuah/devcloud_simplon_JMJ_APP_Monitoring/blob/master/images_readme/azurefunction.png)
+
+## Back-end 
 
 Fonction : Serveur qui expose les données de l'api sous forme de JSON
 https://jmjappmonitoring-back.azurewebsites.net/
@@ -49,13 +55,15 @@ https://jmjappmonitoring-back.azurewebsites.net/
 Exemple de requête avec des paramètres :
 https://jmjappmonitoring-back.azurewebsites.net/api/?SubscriptionName=Nantes&ServiceName=Storage
 
-# Front-end
+![enter image description here](https://github.com/jozuah/devcloud_simplon_JMJ_APP_Monitoring/blob/master/images_readme/back_end.png)
+
+## Front-end
 
 Fonction : Partie visible par l'utilisateur, il sélectionne les données qu'il veut voir par l'intermédiaire de menu déroulant.
 Accessibilité : https://jmjappmonitoringstorage.z28.web.core.windows.net/
 
 
-# Dépot git
+## Dépot git
 
 Les differentes fonctionnalités ont été divisées en plusieurs branches :
 
