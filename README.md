@@ -13,7 +13,6 @@ As part of the MS CLOUD training of the simplon.co digital school, our team of d
 
 From an excel document provided by MS Azure on our email address, the document is stored in a container, the data is extracted and put in a database, the data is then exposed via our API, and finally, a site can simply display the data we want to see.
 
-Translated with www.DeepL.com/Translator (free version)
 
 ## Equipe de developpement
 Jordan T. : https://github.com/Jordan-Fakers
